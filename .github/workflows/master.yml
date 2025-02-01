@@ -36,6 +36,6 @@ jobs:
             docker rm my-html-app || true
             docker run -d \
             --name my-html-app \
-            -p 80:8000 \
+            -p 80:4000 \
             ${{ secrets.DOCKER_USERNAME }}/my-html-app:latest
         EOF
