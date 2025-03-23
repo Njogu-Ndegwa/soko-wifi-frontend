@@ -2,8 +2,41 @@
 <html>
 <head>
     <title>Hello World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .mac-address {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello World</h1>
+    <div class="mac-address">
+        <strong>Your MAC Address:</strong> <span id="mac-display">Loading...</span>
+    </div>
+
+    <script>
+        // Get MAC address from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const macAddress = urlParams.get('mac');
+        
+        // Display MAC address on the page
+        document.getElementById('mac-display').textContent = macAddress || "Not available";
+        
+        // Optional: You could log this or use it for other purposes
+        console.log("User MAC address:", macAddress);
+    </script>
 </body>
 </html>
